@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chris Llamas - Technical Engineer</title>
     <script src = "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
   </head>
-  <body>
+  <body class="bg-gray-900 text-gray-100">
     <header>
-       <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
 <nav class="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -78,6 +77,35 @@
 
 
     <main>
+      <div class="max-w-7xl mx-auto px-4">
+         <section id="hero">
+        <h1>Chris Llamas</h1>
+        <p>Technical Engineer</p>
+      </section>
+      
+      <section id="work" class="p-4">
+        <h2 class="text-3xl font-bold tracking-tight text-white mb-6 ">work</h2>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-4 auto-rows-[minmax(180px,auto)]">
+            <article class="md:col-span-2 md:row-span-2 rounded-2xl bg-gray-800 p-6 transition hover:bg-gray-700 hover:scale-[1.02]">
+            <h3>Featured project</h3>
+            <p>The big one.</p>
+        </article>
+        <article class="rounded-2xl bg-gray-800 p-6 transition hover:bg-gray-700 hover:scale-[1.02]"><h3>Project two</h3></article>
+        <article class="rounded-2xl bg-gray-800 p-6 transition hover:bg-gray-700 hover:scale-[1.02]"><h3>Project three</h3></article>
+        <article class="rounded-2xl bg-gray-800 p-6 transition hover:bg-gray-700 hover:scale-[1.02]"><h3>Project four</h3></article>
+        </div>
+
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>A paragraph.</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+      </section>
+      </div>
 
     </main>
 
