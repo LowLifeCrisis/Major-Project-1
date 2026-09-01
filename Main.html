@@ -13,7 +13,7 @@
     <nav class="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
-      <a href="#hero" class="font-bold text-white text-lg">Chris Llamas</a>
+      <a href="#hero" class="font-semibold text-gray-400 text-sm hover:text-white transition">CL</a>
       <div class="flex gap-4">
         <a href="#work" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Work</a>
         <a href="#about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
@@ -26,9 +26,11 @@
 
     <main>
       <div class="max-w-7xl mx-auto px-4">
-         <section id="hero">
-        <h1>Chris Llamas</h1>
-        <p>Technical Engineer</p>
+         <section id="hero" class="py-20">
+        <h1 class="text-6xl font-bold tracking-tight text-white mb-2">Chris Llamas</h1>
+        <p class="text-xl text-gray-400">
+          <span id="rotating-title">Technical Engineer</span><span class="animate-pulse">|</span>
+        </p>
       </section>
       
       <section id="work" class="p-4">
@@ -102,6 +104,42 @@
         <p>&copy; 2026 Chris LLAMAS. Built with TailwindCSS.</p>
       </div>
     </footer>
+
+    <script>
+      const titles = ["Technical Engineer", "IT systems Administrator", "Problem Solver"];
+      let titleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      const span = document.getElementById("rotating-title");
+
+        function type() {
+            const currentTitle = titles[titleIndex];
+
+            if (isDeleting) {
+            charIndex--;
+            } else {
+            charIndex++;
+            }
+
+            span.textContent = currentTitle.slice(0, charIndex);
+
+            let delay = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentTitle.length) {
+            delay = 1500;
+            isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            titleIndex = (titleIndex + 1) % titles.length;
+            delay = 300;
+            }
+
+          setTimeout(type, delay);
+      }
+
+      type();
+    </script>
 
   </body>
 </html>
